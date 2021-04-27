@@ -1,4 +1,4 @@
-// require('./dotenv').config();
+require('dotenv').config();
 const SUBSCRIPTION_KEY = '835b7b18b3e54b198139dee10f2cd6e9'
 const ENDPOINT = 'https://nauti.cognitiveservices.azure.com'
 const express = require('express')
@@ -12,9 +12,8 @@ const fs = require("fs");
 const cors = require('cors');
 
 
-
-let subscriptionKey = SUBSCRIPTION_KEY
-let endpoint = ENDPOINT + '/contentmoderator/moderate/v1.0/ProcessText'
+let subscriptionKey = process.env.SUBSCRIPTION_KEY
+let endpoint = process.env.ENDPOINT + '/contentmoderator/moderate/v1.0/ProcessText'
 
 app.use(cors());
 
