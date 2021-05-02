@@ -25,7 +25,7 @@ const options = {
             description: 'Azure Content Moderator is an AI service that lets you handle content that is potentially offensive, risky, or otherwise undesirable. It includes the AI-powered content moderation service which scans text and applies content flags automatically. Using content filtering to detect potential profanity in more than 100 languages, flag text that may be deemed inappropriate depending on context (in public preview), and match text against your custom lists. Content Moderator also helps check for personally identifiable information (PII). The following are a few scenarios in which a software developer or team would require a content moderation service: \n    - Online marketplaces that moderate product catalogs and other user-generated content. \n    - Gaming companies that moderate user-generated game artifacts and chat rooms. \n    - Social messaging platforms that moderate text added by their users. Enterprise media companies that implement centralized moderation for their content. \n    - K-12 education solution providers filtering out content that is inappropriate for students and educators.'
         
         },
-        host: "localhost:3000",
+        host: "159.65.35.152:3000",
         basePath: "/",
     },
     apis: ["./index.js"],
@@ -35,11 +35,11 @@ const specs = swaggerJsdoc(options);
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(specs));
 
 app.get('/', (req, res) => {
-    res.send('Hello! This is Moderate Text API.')
+    res.send('Hello! This is Content Moderator - Text API. Go to http://159.65.35.152:3000/docs/ for documentation')
 })
   
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`Example app listening at http://159.65.35.152:${port}`)
 })
 
 
