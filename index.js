@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
 })
   
 app.listen(port, () => {
-    console.log(`Example app listening at http://159.65.35.152:${port}`)
+    console.log(`Content Moderator - Text API listening at http://159.65.35.152:${port}`)
 })
 
 //
