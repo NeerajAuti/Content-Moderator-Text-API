@@ -1,6 +1,5 @@
+//importing required packages
 require('dotenv').config();
-const SUBSCRIPTION_KEY = '835b7b18b3e54b198139dee10f2cd6e9'
-const ENDPOINT = 'https://nauti.cognitiveservices.azure.com'
 const express = require('express')
 const app = express()
 const port = 3000;
@@ -11,12 +10,13 @@ const swaggerUi = require('swagger-ui-express');
 const fs = require("fs");
 const cors = require('cors');
 
-
+//acquiring values from environmental variable.
 let subscriptionKey = process.env.SUBSCRIPTION_KEY
 let endpoint = process.env.ENDPOINT
 
 app.use(cors());
 
+//Swagger setup
 const options = {
     swaggerDefinition: {
         info: {
@@ -42,8 +42,11 @@ app.listen(port, () => {
     console.log(`Example app listening at http://159.65.35.152:${port}`)
 })
 
-
+//
 //Text Screening
+//Swagger code for Screen API
+//
+
 /**
  * @swagger
  * definitions:
@@ -113,6 +116,9 @@ app.listen(port, () => {
  *          $ref: '#/definitions/Screen'
  *             
  */
+//
+// Sending request to my API
+//
 app.post('/Screen', async (req, res) => {
     const parameters = new URLSearchParams();
 
@@ -121,8 +127,7 @@ app.post('/Screen', async (req, res) => {
         parameters.append('PII', req.query.PII);
         parameters.append('classify', req.query.classify);
         parameters.append('language', req.query.language);
-        // console.log(req.query.content)
-
+        // Sending request to Vendor API
         axios.post(
             endpoint+'/Screen',
             req.query.content,
@@ -147,8 +152,10 @@ app.post('/Screen', async (req, res) => {
 })
 
 
-
+//
 //Detect Language
+//Swagger code for DetectLanguage API
+//
 /**
  * @swagger
  * definitions:
@@ -182,10 +189,13 @@ app.post('/Screen', async (req, res) => {
  *          $ref: '#/definitions/DetectLanguage'
  *             
  */
+//
+// Sending request to my API
+//
  app.post('/DetectLanguage', async (req, res) => {
 
     try{
-       
+        // Sending request to Vendor API
         axios.post(
             endpoint+'/DetectLanguage',
             req.query.content,
