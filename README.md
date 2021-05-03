@@ -19,6 +19,9 @@ Use the API to scan your content. Content Moderator then processes your content 
         - Score is between 0 and 1. The higher the score, the higher the model is predicting that the category may be applicable.
         - Review Recommended is either true or false depending on the internal score thresholds. Customers should assess whether to use this value or decide on custom thresholds based on their content policies.
 
+### DetectLanguage
+Use the API to detect the language the content is provided in.
+
 ## Live Demo
 
 Live demo is available [here](http://159.65.35.152:3000/) with [documentation](http://159.65.35.152:3000/docs) till 20th May 2021.
