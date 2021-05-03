@@ -5,6 +5,7 @@ Content Moderator is an AI service that lets you handle potentially offensive, r
 This API has two major POST calls:
 ### Screen
 Use the API to scan your content. Content Moderator then processes your content and sends the results along with relevant information back to your systems. This call has few extra features which can be used:
+
     1) Autocorrect - Runs auto correction on the input, before running other operations.
 
     2) PII - Detects Personal Identifiable Information (PII) in the input. PII is any data that can be used to identify a specific individual. Social Security numbers, mailing or email address, and phone numbers have most commonly been considered PII, but technology has expanded the scope of PII considerably. It can include an IP address, login IDs, social media posts, or digital images.
